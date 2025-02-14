@@ -1,9 +1,9 @@
 import requests
 import os
-from config import HUGGINGFACE_API_KEY
+from config import HUGGINGFACE_API_KEY,api_key
 
 def get_ai_response(query):
-    if not HUGGINGFACE_API_KEY:
+    if not api_key:
         return "Error: Hugging Face API key not found. Set it in environment variables."
 
     url = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
