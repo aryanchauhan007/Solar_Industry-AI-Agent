@@ -7,7 +7,7 @@ def get_ai_response(query):
         return "Error: Hugging Face API key not found. Set it in environment variables."
 
     url = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
-    headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
+    headers = {"Authorization": f"Bearer {api_key}"}
 
     data = {"inputs": query}  
 
