@@ -29,18 +29,24 @@ def main():
     def display_card(title, questions, icon):
         st.markdown(f"""
             <div style="
-                background-color: #f9f9f9; 
+                background-color: #ffffff; 
+                border: 1px solid #e0e0e0;
                 padding: 20px; 
                 border-radius: 10px; 
-                box-shadow: 2px 2px 10px rgba(0,0,0,0.1); 
-                min-height: 200px;
+                box-shadow: 4px 4px 15px rgba(0,0,0,0.1); 
+                min-height: 250px;
+                margin-bottom: 20px;
             ">
-                <h4 style="margin-bottom: 10px;">{icon} {title}</h4>
-                <ul style="padding-left: 20px; margin-top: 10px;">
+                <h4 style="margin-bottom: 15px;">{icon} {title}</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
         """, unsafe_allow_html=True)
         
         for question in questions:
-            st.markdown(f"<li>{question}</li>", unsafe_allow_html=True)
+            st.markdown(f"""
+                <li style="margin-bottom: 10px; color: #333;">
+                    {question}
+                </li>
+            """, unsafe_allow_html=True)
         
         st.markdown("""
                 </ul>
