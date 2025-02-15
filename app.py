@@ -27,16 +27,25 @@ def main():
 
     # Function to display question cards in a clean style
     def display_card(title, questions, icon):
-        st.markdown(f"### {icon} {title}")
-        st.markdown("""
-            <div style="background-color: #f9f9f9; padding: 15px; border-radius: 10px; 
-                        box-shadow: 2px 2px 10px rgba(0,0,0,0.1); min-height: 200px;">
+        st.markdown(f"""
+            <div style="
+                background-color: #f9f9f9; 
+                padding: 20px; 
+                border-radius: 10px; 
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.1); 
+                min-height: 200px;
+            ">
+                <h4 style="margin-bottom: 10px;">{icon} {title}</h4>
+                <ul style="padding-left: 20px; margin-top: 10px;">
         """, unsafe_allow_html=True)
         
         for question in questions:
-            st.markdown(f"- {question}")
+            st.markdown(f"<li>{question}</li>", unsafe_allow_html=True)
         
-        st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("""
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
 
     # Displaying in 2 Columns
     col1, col2 = st.columns(2)
