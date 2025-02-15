@@ -4,7 +4,6 @@ from backend import get_ai_response
 def main():
     st.set_page_config(page_title="Solar AI Assistant", page_icon="☀️")
     st.title("☀️ Solar Industry AI Assistant")
-    st.write("Ask me anything about solar energy, and I'll provide insights!")
 
     # Search Bar on Top
     st.markdown("---")
@@ -21,40 +20,39 @@ def main():
             st.success("Here's what I found:")
             st.write(response)
 
-    # Suggested Questions Below Search Bar
+    # Suggested Questions
     st.markdown("---")
     st.subheader("💡 Suggested Questions")
 
-    # Custom CSS for better box design
+    # Custom CSS for Box Layout
     st.markdown("""
         <style>
-            .question-card {
+            .card {
                 background-color: #f9f9f9;
-                border: 1px solid #e0e0e0;
                 border-radius: 10px;
                 padding: 15px;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
                 margin-bottom: 20px;
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             }
-            .question-card h4 {
+            .card h4 {
                 margin-bottom: 10px;
                 font-size: 18px;
-            }
-            .question-card ul {
-                padding-left: 20px;
-                list-style-type: disc;
-            }
-            .question-card ul li {
-                margin-bottom: 8px;
                 color: #333;
+            }
+            .card ul {
+                padding-left: 20px;
+            }
+            .card ul li {
+                margin-bottom: 8px;
+                color: #555;
             }
         </style>
     """, unsafe_allow_html=True)
 
-    # Function to display questions in cards
-    def display_card(title, questions, icon):
+    # Function to create cards
+    def create_card(title, questions, icon):
         st.markdown(f"""
-            <div class="question-card">
+            <div class="card">
                 <h4>{icon} {title}</h4>
                 <ul>
         """, unsafe_allow_html=True)
@@ -64,11 +62,11 @@ def main():
         
         st.markdown("</ul></div>", unsafe_allow_html=True)
 
-    # Grid Layout for Suggested Questions
+    # Grid Layout for Questions
     col1, col2 = st.columns(2)
 
     with col1:
-        display_card(
+        create_card(
             "Basic Questions",
             [
                 "How do solar panels generate electricity?",
@@ -78,7 +76,7 @@ def main():
             "✅"
         )
 
-        display_card(
+        create_card(
             "Financial & ROI Questions",
             [
                 "How much does it cost to install a solar panel system?",
@@ -90,7 +88,7 @@ def main():
         )
 
     with col2:
-        display_card(
+        create_card(
             "Technical Questions",
             [
                 "What is the efficiency of modern solar panels?",
@@ -102,7 +100,7 @@ def main():
             "⚙"
         )
 
-        display_card(
+        create_card(
             "Industry & Market Trends",
             [
                 "What are the latest trends in the solar energy industry?",
@@ -113,7 +111,7 @@ def main():
             "📈"
         )
 
-        display_card(
+        create_card(
             "Maintenance & Troubleshooting",
             [
                 "How often do solar panels need maintenance?",
