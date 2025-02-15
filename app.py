@@ -39,6 +39,13 @@ def main():
             "How long do solar panels last?"
         ])
 
+        display_questions("🔧 Maintenance & Troubleshooting", [
+            "How often do solar panels need maintenance?",
+            "What are common problems in solar panel systems?",
+            "Can dust and dirt reduce solar panel efficiency?",
+            "How to clean and maintain solar panels for maximum efficiency?"
+        ])
+
         display_questions("💰 Financial & ROI Questions", [
             "How much does it cost to install a solar panel system?",
             "What is the average payback period for solar panels?",
@@ -60,13 +67,6 @@ def main():
             "Which country produces the most solar energy?",
             "What is the future of solar energy?",
             "How is AI being used in the solar energy industry?"
-        ])
-
-        display_questions("🔧 Maintenance & Troubleshooting", [
-            "How often do solar panels need maintenance?",
-            "What are common problems in solar panel systems?",
-            "Can dust and dirt reduce solar panel efficiency?",
-            "How to clean and maintain solar panels for maximum efficiency?"
         ])
 
 if __name__ == "__main__":
