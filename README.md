@@ -97,7 +97,7 @@ def get_ai_response(user_query):
     }
     response = requests.post(url, headers=headers, json=payload)
     return response.json()
-    
+```    
 
 ### Running the App
 ```bash
