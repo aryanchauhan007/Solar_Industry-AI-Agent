@@ -33,6 +33,71 @@ This tool provides **suggested questions** categorized into different topics, al
     ```bash
     pip install -r requirements.txt
     ```
+---
+
+## 🔑 **Setting up Hugging Face API using `secrets.toml`**
+
+This application uses the **Hugging Face API** for generating intelligent responses.  
+To securely manage the API key, we use **Streamlit's `secrets.toml`** method.  
+
+---
+
+### 📌 **Step 1: Get Hugging Face API Key**  
+1. Create an account or log in at [Hugging Face](https://huggingface.co/join).  
+2. Navigate to **Settings > API tokens**.  
+3. Generate a new API token and **copy** it securely.
+
+---
+
+### 📁 **Step 2: Add API Key to `secrets.toml`**  
+In Streamlit, we securely store secrets using `secrets.toml`.  
+
+1. **Create a `secrets.toml` file** in the `.streamlit` directory:
+    ```
+    .streamlit/secrets.toml
+    ```
+    - If `.streamlit` directory doesn't exist, **create it manually**.
+
+2. Add the following content to `secrets.toml`:
+    ```toml
+    # .streamlit/secrets.toml
+    HUGGINGFACE_API_KEY = "your_api_key_here"
+    ```
+   - Replace `your_api_key_here` with your actual Hugging Face API key.  
+
+---
+
+### 🔒 **Step 3: Secure the API Key (Ignore in Git)**  
+- Make sure `secrets.toml` **is not pushed to GitHub** by adding it to `.gitignore`:
+    ```
+    # Ignore Streamlit secrets
+    .streamlit/secrets.toml
+    ```
+- **Note:** This is already configured in this project.  
+  - Double-check before pushing to GitHub to **avoid accidental exposure**.
+
+---
+
+### 🌐 **Step 4: Using the API Key in Code**  
+In `backend.py`, access the API key like this:
+```python
+import streamlit as st
+import requests
+
+# Get Hugging Face API key from secrets
+API_KEY = st.secrets["HUGGINGFACE_API_KEY"]
+
+def get_ai_response(user_query):
+    headers = {
+        "Authorization": f"Bearer {API_KEY}"
+    }
+    url = "https://api-inference.huggingface.co/models/YOUR_MODEL_NAME"
+    payload = {
+        "inputs": user_query
+    }
+    response = requests.post(url, headers=headers, json=payload)
+    return response.json()
+    
 
 ### Running the App
 ```bash
