@@ -102,7 +102,7 @@ def get_ai_response(user_query):
 ### Running the App
 ```bash
 streamlit run app.py
-
+```
 
 # ScreenShots
 <img width="595" alt="question1" src="https://github.com/user-attachments/assets/61145044-46a7-4b0a-bb2e-8b9919af8c65" />
