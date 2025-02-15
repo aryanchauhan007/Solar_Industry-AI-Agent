@@ -25,93 +25,90 @@ def main():
     st.markdown("---")
     st.subheader("💡 Suggested Questions")
 
-    # Function to display question cards in a clean style
-    def display_card(title, questions, icon):
-        st.markdown(f"""
-            <div style="
-                background-color: #ffffff; 
+    # All HTML in one block to maintain structure
+    st.markdown("""
+        <style>
+            .card {
+                background-color: #ffffff;
                 border: 1px solid #e0e0e0;
-                padding: 20px; 
-                border-radius: 10px; 
-                box-shadow: 4px 4px 15px rgba(0,0,0,0.1); 
+                border-radius: 10px;
+                box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+                padding: 20px;
                 min-height: 250px;
                 margin-bottom: 20px;
-            ">
-                <h4 style="margin-bottom: 15px;">{icon} {title}</h4>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-        """, unsafe_allow_html=True)
+            }
+            .card h4 {
+                margin-bottom: 15px;
+            }
+            .card ul {
+                list-style-type: disc;
+                padding-left: 20px;
+            }
+            .card ul li {
+                margin-bottom: 10px;
+                color: #333;
+            }
+            .card-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+        </style>
         
-        for question in questions:
-            st.markdown(f"""
-                <li style="margin-bottom: 10px; color: #333;">
-                    {question}
-                </li>
-            """, unsafe_allow_html=True)
-        
-        st.markdown("""
+        <div class="card-container">
+
+            <div class="card">
+                <h4>✅ Basic Questions</h4>
+                <ul>
+                    <li>How do solar panels generate electricity?</li>
+                    <li>What are the benefits of using solar energy?</li>
+                    <li>How long do solar panels last?</li>
                 </ul>
             </div>
-        """, unsafe_allow_html=True)
 
-    # Displaying in 2 Columns
-    col1, col2 = st.columns(2)
+            <div class="card">
+                <h4>⚙ Technical Questions</h4>
+                <ul>
+                    <li>What is the efficiency of modern solar panels?</li>
+                    <li>What are the different types of solar panels?</li>
+                    <li>How does net metering work in solar energy systems?</li>
+                    <li>What is the best angle to install solar panels?</li>
+                    <li>Can solar panels work on cloudy days?</li>
+                </ul>
+            </div>
 
-    with col1:
-        display_card(
-            "Basic Questions",
-            [
-                "How do solar panels generate electricity?",
-                "What are the benefits of using solar energy?",
-                "How long do solar panels last?"
-            ],
-            "✅"
-        )
+            <div class="card">
+                <h4>💰 Financial & ROI Questions</h4>
+                <ul>
+                    <li>How much does it cost to install a solar panel system?</li>
+                    <li>What is the average payback period for solar panels?</li>
+                    <li>Are there government subsidies for solar energy?</li>
+                    <li>What factors affect the ROI of solar panel installation?</li>
+                </ul>
+            </div>
 
-        display_card(
-            "Financial & ROI Questions",
-            [
-                "How much does it cost to install a solar panel system?",
-                "What is the average payback period for solar panels?",
-                "Are there government subsidies for solar energy?",
-                "What factors affect the ROI of solar panel installation?"
-            ],
-            "💰"
-        )
+            <div class="card">
+                <h4>📈 Industry & Market Trends</h4>
+                <ul>
+                    <li>What are the latest trends in the solar energy industry?</li>
+                    <li>Which country produces the most solar energy?</li>
+                    <li>What is the future of solar energy?</li>
+                    <li>How is AI being used in the solar energy industry?</li>
+                </ul>
+            </div>
 
-        display_card(
-            "Maintenance & Troubleshooting",
-            [
-                "How often do solar panels need maintenance?",
-                "What are common problems in solar panel systems?",
-                "Can dust and dirt reduce solar panel efficiency?",
-                "How to clean and maintain solar panels for maximum efficiency?"
-            ],
-            "🔧"
-        )
+            <div class="card">
+                <h4>🔧 Maintenance & Troubleshooting</h4>
+                <ul>
+                    <li>How often do solar panels need maintenance?</li>
+                    <li>What are common problems in solar panel systems?</li>
+                    <li>Can dust and dirt reduce solar panel efficiency?</li>
+                    <li>How to clean and maintain solar panels for maximum efficiency?</li>
+                </ul>
+            </div>
 
-    with col2:
-        display_card(
-            "Technical Questions",
-            [
-                "What is the efficiency of modern solar panels?",
-                "What are the different types of solar panels?",
-                "How does net metering work in solar energy systems?",
-                "What is the best angle to install solar panels?",
-                "Can solar panels work on cloudy days?"
-            ],
-            "⚙"
-        )
-
-        display_card(
-            "Industry & Market Trends",
-            [
-                "What are the latest trends in the solar energy industry?",
-                "Which country produces the most solar energy?",
-                "What is the future of solar energy?",
-                "How is AI being used in the solar energy industry?"
-            ],
-            "📈"
-        )
+        </div>
+    """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
