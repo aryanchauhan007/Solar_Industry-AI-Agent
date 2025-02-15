@@ -1,6 +1,13 @@
 # ☀️ Solar Industry AI Assistant
 
-Solar Industry AI Assistant is a **Streamlit-based application** that helps users get insights about solar energy.  
+Solar Industry AI Assistant is a **Streamlit-based application** that helps users get insights about solar energy. 
+Designed & implemented an AI-powered assistant specializing in solar industry consulting.
+
+**Project Goal** 
+
+An intelligent assistant that provides accurate, helpful information about solar energy 
+to both technical and non-technical users.
+
 This tool provides **suggested questions** categorized into different topics, along with a **search feature** for custom queries.
 
 ---
@@ -109,5 +116,7 @@ streamlit run app.py
 
 <img width="551" alt="answer" src="https://github.com/user-attachments/assets/d339b160-c231-48ac-91bc-5a3c3fc50d68" />
 
+#  Streamlit App link -
+[Solar_Assistant](https://solarindustry-ai-agent-ykxjevxji9vqduqniuymbe.streamlit.app/)
 
 
