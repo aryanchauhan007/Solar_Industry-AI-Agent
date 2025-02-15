@@ -26,8 +26,8 @@ This tool provides **suggested questions** categorized into different topics, al
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/solar-ai-assistant.git
-    cd solar-ai-assistant
+    git clone https://github.com/aryanchauhan007/Solar_Industry-AI-Agent.git
+    cd Solar_Assistant
     ```
 2. Install the dependencies:
     ```bash
@@ -102,3 +102,12 @@ def get_ai_response(user_query):
 ### Running the App
 ```bash
 streamlit run app.py
+
+
+# ScreenShots
+<img width="595" alt="question1" src="https://github.com/user-attachments/assets/61145044-46a7-4b0a-bb2e-8b9919af8c65" />
+
+<img width="551" alt="answer" src="https://github.com/user-attachments/assets/d339b160-c231-48ac-91bc-5a3c3fc50d68" />
+
+
+
